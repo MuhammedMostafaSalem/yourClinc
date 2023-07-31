@@ -13,7 +13,9 @@ const Header = () => {
                 <div className='nav_wrapper'>
                     <Navbar.Brand className='logo'>
                         <div className='logoImg'>
-                            <img src={home} alt="" />
+                            <Link to='/'>
+                                <img src={home} alt="" />
+                            </Link>
                         </div>
                         <div className='logoText'>yourClinc</div>
                     </Navbar.Brand>
