@@ -3,6 +3,7 @@ import {Navbar, Container, Nav, NavLink} from 'react-bootstrap'
 import home from '../../Assets/images/home.png'
 import userIcon from '../../Assets/images/user-icon.png'
 import "../../Styles/Header.css"
+import { Link } from 'react-router-dom'
 
 const Header = () => {
 
@@ -14,7 +15,7 @@ const Header = () => {
                         <div className='logoImg'>
                             <img src={home} alt="" />
                         </div>
-                        <div>yourClinc</div>
+                        <div className='logoText'>yourClinc</div>
                     </Navbar.Brand>
                     <Nav className="navMenu">
                         <ul className='profile_img'>
@@ -22,7 +23,9 @@ const Header = () => {
                                 <NavLink className='bookAppointment'>Book Appointment</NavLink>
                             </li>
                             <li>
-                                <img src={userIcon} alt='' />
+                                <Link to='/doc'>
+                                    <img src={userIcon} alt='' />
+                                </Link>
                             </li>
                         </ul>
                     </Nav>

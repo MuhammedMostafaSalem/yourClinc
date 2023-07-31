@@ -53,18 +53,30 @@
     }
 }
 @media (max-width: 991px) {
-    .nav_wrapper .navMenu .menu,
     .nav_wrapper .navMenu .profile_img {
         list-style: none;
         display: flex;
-        flex-direction: column;
         gap: 15px;
-        margin: 0;
+        margin: 10px 0 0 0 !important;
         align-items: center;
         text-align: center;
-        font-size: 18px;
     }
-    .nav_wrapper .navMenu .profile_img img {
+    /* .nav_wrapper .navMenu .profile_img img {
         width: 100%;
+    } */
+}
+@media (max-width: 363px) {
+    .nav_wrapper .navMenu .profile_img img {
+        width: 30px;
+    }
+    .nav_wrapper .navMenu .profile_img .bookAppointment {
+        font-size: 9px;
+    }
+    .logoImg img {
+        width: 35px;
+        padding: 5px;
+    }
+    .logo .logoText {
+        font-size: 15px;
     }
 }
