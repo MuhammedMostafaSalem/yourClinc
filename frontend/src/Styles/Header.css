@@ -1,0 +1,134 @@
+.navbar {
+    padding: 0 !important;
+}
+.navbar>.container {
+    display: block !important;
+}
+.nav_wrapper {
+    display: flex;
+    justify-content: space-between !important;
+}
+.nav_wrapper .navMenu {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}
+.nav_wrapper .navMenu .profile_img img {
+    width: 40px;
+}
+.nav_wrapper .navMenu .menu,
+.nav_wrapper .navMenu .profile_img {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    align-items: center;
+}
+.nav_wrapper .navMenu .profile_img .bookAppointment {
+    background-color: var(--color-blue1);
+    color: var(--color-white);
+    padding: 5px 10px;
+    border-radius: var(--borderRadius);
+}
+.logo {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-weight: 700;
+}
+.logoImg {
+    background-color: var(--color-blue1);
+    width: 50px;
+    border-radius: 50%;
+}
+.logoImg img {
+    width: 100%;
+    padding: 5px;
+}
+.mobile_bar {
+    display: none;
+    margin-top: 15px;
+}
+
+
+
+/* resposeve media queries */
+@media (max-width: 1199px) {
+    .nav_wrapper .navMenu .menu, .nav_wrapper .navMenu .profile_img {
+        font-size: 13px;
+    }
+}
+@media (max-width: 991px) {
+    .mobile_bar {
+        display: block;
+    }
+    .navMenu {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 100% !important;
+        padding: 10px 50px;
+        background-color: #fff;
+        box-shadow: 0 1px 5px rgb(199, 198, 198);
+        z-index: 999;
+        gap: 30px;
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+        justify-content: center;
+        transition: 1s;
+    }
+    .active_menu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100% !important;
+        padding: 10px 50px;
+        background-color: #fff;
+        box-shadow: 0 1px 5px rgb(199, 198, 198);
+        z-index: 999;
+        gap: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 1s;
+    }
+    .nav_wrapper .navMenu .menu,
+    .nav_wrapper .navMenu .profile_img {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: 0;
+        align-items: center;
+        text-align: center;
+        font-size: 18px;
+    }
+    .nav_wrapper .navMenu .profile_img img {
+        width: 100%;
+    }
+    .nav_wrapper .active_menu {
+        display: block;
+        width: 60%;
+    }
+    .nav_wrapper .active_menu .menu,
+    .nav_wrapper .active_menu .profile_img {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: 0;
+        align-items: center;
+        font-size: 18px;
+    } 
+    .nav_wrapper .active_menu .profile_img {
+        margin-top: 30px !important;
+    }
+    .nav_wrapper .active_menu .profile_img .bookAppointment {
+        background-color: var(--color-blue1);
+        color: var(--color-white);
+        padding: 5px 10px;
+        border-radius: var(--borderRadius);
+    }
+}
