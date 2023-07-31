@@ -1,0 +1,37 @@
+.services {
+    background-color: rgba(248,249,250, 1)!important;
+    padding: 25px 0;
+    margin-bottom: 50px;
+}
+.services h3
+.services h5 {
+    text-transform: capitalize;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+.services p {
+    color: var(--small-text-color);
+}
+
+.services_section {
+    margin: 25px 0;
+}
+.service_item {
+    padding: 20px;
+    align-items: center;
+    gap: 15px;
+    border-radius: 30px;
+}
+.service_item .i {
+    font-size: 25px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+}
+/* resposeve media queries */
+@media (max-width:991px) {
+    .col_service {
+        margin: 20px 0;
+    }
+}

@@ -1,0 +1,22 @@
+.doctor {
+    margin-bottom: 50px;
+}
+.doctor h3 {
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+.doctor .cardItem {
+    border: none;
+    margin-top: 20px;
+}
+.doctor .cardItem img {
+    width: 80%;
+    height: 300px;
+}
+.doctor .cardItem h6 {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}

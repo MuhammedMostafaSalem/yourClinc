@@ -1,0 +1,16 @@
+.aboutUs {
+    background-color: rgba(248,249,250, 1)!important;
+    padding: 50px 0;
+    margin-bottom: 50px;
+}
+.aboutUs h3,
+.aboutUs h5 {
+    color: var(--primary-color);
+}
+.aboutUs p {
+    color: var(--small-text-color);
+}
+.about_item {
+    padding: 10px;
+    border-radius: var(--borderRadius);
+}
