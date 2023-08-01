@@ -1,41 +1,39 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../../Styles/Doctor.css'
 import { Card, Col, Container, Row } from 'react-bootstrap'
-import doc1 from '../../Assets/images/d2.png'
-import doc2 from '../../Assets/images/d3.png'
-import doc3 from '../../Assets/images/d4.png'
+import { useDispatch, useSelector } from 'react-redux'
+import { getDoctors } from '../../redux/DocSlice'
 
 const Doctor = () => {
-    const doctor = [
-        {
-            img: doc1,
-            name: "Dr. Paradox"
-        },
-        {
-            img: doc2,
-            name: "Dr. Alex"
-        },
-        {
-            img: doc3,
-            name: "Dr. Ana"
-        },
-    ]
+    const dispatch = useDispatch();
+    const [selectedData, setSelectedData] = useState(null);
+    const { docs } = useSelector(state => state.docSlice);
+    useEffect(() => {
+        setSelectedData(null)
+        dispatch(getDoctors())
+        setSelectedData(!null)
+    }, [selectedData]);
     return (
         <div className='doctor'>
             <Container>
                 <h3>Meet Our Speciallost</h3>
                 <Row>
                     {
-                        doctor.map((item, index) => {
-                            return (
-                                <Col lg='4' md='6' key={index}>
-                                    <Card className='cardItem'>
-                                        <img src={item.img} alt=''/>
-                                        <h6>{item.name}</h6>
-                                    </Card>
-                                </Col>
-                            )
-                        })
+                        docs ?
+                            docs.map((item, index) => {
+                                return (
+                                    <Col lg='4' md='6' key={index}>
+                                        <Card className='cardItem'>
+                                            <h4>{`Dr. ${item.name}`}</h4>
+                                            <p>{item.description}</p>
+                                            <p>{item.shiftDate}</p>
+                                        </Card>
+                                    </Col>
+                                )
+                            })
+                        : <div className='alert alert-secondary' role='alert'>
+                        There is no doctor selected yet. Please select!
+                        </div>
                     }
                 </Row>
             </Container>
