@@ -35,15 +35,15 @@ const AddForm = () => {
                         <form onSubmit={handleSubmit}>
                             <div className='form-group my-3'>
                                 <label htmlFor='title' className='mb-2'>Name</label>
-                                <input type='text' className='form-control' id='title' ref={nameRef} />
+                                <input placeholder='Name Doctor' type='text' className='form-control' id='title' ref={nameRef} />
                             </div>
                             <div className='form-group my-3'>
-                                <label htmlFor='price' className='mb-2'>Shift Date</label>
-                                <input type='text' className='form-control' id='price' ref={shiftRef} />
+                                <label htmlFor='shift' className='mb-2'>Shift Date</label>
+                                <input placeholder='hour to hour' type='text' className='form-control' id='shift' ref={shiftRef} />
                             </div>
                             <div className='form-group my-3'>
                                 <label htmlFor='Description' className='mb-2'>Description</label>
-                                <input type='text' className='form-control' id='Description' ref={descriptionRef} />
+                                <input placeholder="Doctor's Job" type='text' className='form-control' id='Description' ref={descriptionRef} />
                             </div>
                             <button type='submit' className='btn btn-primary'>
                                 Submit
