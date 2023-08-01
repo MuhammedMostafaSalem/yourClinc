@@ -24,5 +24,21 @@
       "description": "جراح",
       "id": 4
     }
+  ],
+  "client": [
+    {
+      "clientName": "محمد",
+      "docName": "Dr. samir",
+      "date": "8pm",
+      "description": "eye",
+      "id": 2
+    },
+    {
+      "clientName": "احمد",
+      "docName": "Dr. samir",
+      "date": "8pm",
+      "description": "مساعد",
+      "id": 3
+    }
   ]
 }

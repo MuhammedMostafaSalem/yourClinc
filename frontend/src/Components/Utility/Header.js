@@ -1,5 +1,5 @@
 import React from 'react'
-import {Navbar, Container, Nav, NavLink} from 'react-bootstrap'
+import {Navbar, Container, Nav} from 'react-bootstrap'
 import home from '../../Assets/images/home.png'
 import userIcon from '../../Assets/images/user-icon.png'
 import "../../Styles/Header.css"
@@ -22,7 +22,7 @@ const Header = () => {
                     <Nav className="navMenu">
                         <ul className='profile_img'>
                             <li>
-                                <NavLink className='bookAppointment'>Book Appointment</NavLink>
+                                <Link to='/client' className='bookAppointment'>Book Appointment</Link>
                             </li>
                             <li>
                                 <Link to='/doc'>
