@@ -1,13 +1,18 @@
 .doctor {
     margin-bottom: 50px;
 }
-.doctor h3 {
+.doctor h3,
+.doctor h4 {
     text-align: center;
     color: var(--primary-color);
     font-weight: bold;
 }
+.doctor .cardItem p {
+    color: var(--small-text-color);
+}
 .doctor .cardItem {
-    border: none;
+    padding: 10px 0;
+    text-align: center;
     margin-top: 20px;
 }
 .doctor .cardItem img {
