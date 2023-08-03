@@ -4,6 +4,7 @@ import HomePage from "./Page/HomePage";
 import Footer from "./Components/Utility/Footer";
 import DocPage from "./Page/DocPage";
 import ClientPage from "./Page/ClientPage";
+import RegisterPage from "./Page/Auth/RegisterPage";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route index element={<HomePage/>}/>
           <Route path='/doc' element={<DocPage/>}/>
           <Route path='/client' element={<ClientPage/>}/>
+          <Route path='/register' element={<RegisterPage/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>
