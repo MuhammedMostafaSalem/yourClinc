@@ -1,11 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit'
-import docSlice from './DocSlice';
-import clientSlice from './ClientSlice';
+import { applyMiddleware, createStore } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk"
+import RootReducer from "./Reducers/RootReducer";
 
+const initailState = {}
+const meddleware = [thunk]
 
-export const store = configureStore({
-    reducer: {
-        docSlice,
-        clientSlice,
-    },
-})
+const store = createStore(RootReducer, initailState, composeWithDevTools(applyMiddleware(...meddleware)));
+export default store;
