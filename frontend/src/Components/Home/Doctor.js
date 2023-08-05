@@ -11,20 +11,20 @@ const Doctor = () => {
             <Container>
                 <h3>Meet Our Speciallost</h3>
                 <Row>
-                    <Col lg='4' md='6'>
-                        {
-                            posts.length > 0 ? posts.map((item, index) => {
-                                return(
-                                    <Card className='cardItem' key={index}>
-                                        <h4>{item.name}</h4>
-                                        <p>{item.description}</p>
-                                        <p>{`${item.startShift} : ${item.endShift}`}</p>
-                                    </Card>
-                                )
-                            })
-                            : <div className='text-center'>There is no doctor now</div>
-                        }
-                    </Col>
+                {
+                    posts.length > 0 ? posts.map((item, index) => {
+                        return(
+                            <Col lg='4' md='6'>
+                                <Card className='cardItem' key={index}>
+                                    <h4>{item.name}</h4>
+                                    <p>{item.description}</p>
+                                    <p>{`${item.startShift} : ${item.endShift}`}</p>
+                                </Card>
+                            </Col>
+                        )
+                    })
+                    : <div className='text-center'>There is no doctor now</div>
+                }
                 </Row>
             </Container>
         </div>
