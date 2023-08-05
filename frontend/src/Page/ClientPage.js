@@ -1,6 +1,6 @@
 import React from 'react'
 import ClientContainer from '../Components/Client/ClientContainer'
-import AddForm from '../Components/Client/AddForm'
+import AddForm from '../Components/Client/AddClient'
 
 const ClientPage = () => {
     return (

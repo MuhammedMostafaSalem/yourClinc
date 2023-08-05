@@ -1,42 +1,56 @@
 import React from 'react'
+import { toast } from 'react-toastify'
 
-const ClientList = ({isloading, clit, deleteClient, dispatch, getClientId}) => {
-    const clintList = clit.length > 0 ? clit.map((item)=> {
-        return(
-            <li className='list-group-item d-flex  justify-content-between align-items-center' key={item.id}>
-                <div>{item.clientName}</div>
-                <div className='btn-group' role='group'>
-                    <button type='button' className='btn btn-primary' onClick={()=> getClientId(item.id)}>
-                        Read
-                    </button>
-                    <button type='button' className='btn btn-danger'
-                        onClick={()=> dispatch(deleteClient(item)).unwrap().then((originalPromiseResult)=> {
-                            
-                        console.log(originalPromiseResult)})
-
-                        .catch((rejectedValueOrSerializedError)=> {
-                        console.log(rejectedValueOrSerializedError)
-                        })
-                    }>
-                        Delete
-                    </button>
-                </div>
-            </li>
-        )
-    }) : 'there is no client available!';
+const ClientList = ({isloading, comments, deleteClient, dispatch, getClientId}) => {
 
     return (
         <div>
             <h2 className='text-center'>Client List</h2>
-            <ul className='list-group'>
+            {
+                isloading ? ('loading...') :
+                <ul className='list-group'>
                 {
-                    isloading ? ('loading...') : (
-                        <ul className='list-group'>
-                            {clintList}
-                        </ul>
-                    )
+                    comments.length > 0 ? comments.map((item, index) => {
+                        return (
+                            <li key={index} className='list-group-item d-flex  justify-content-between align-items-center'>
+                                <div>{item.nameClient}</div>
+                                <div className='btn-group' role='group'>
+                                    <button
+                                        onClick={() => getClientId(item.id)}
+                                        type='button'
+                                        className='btn btn-primary'
+                                    >
+                                        Read
+                                    </button>
+                                    <button
+                                        onClick={
+                                            ()=> {
+                                                const get = async() => {
+                                                    await dispatch(deleteClient(item)).unwrap().then((originalPromiseResult)=> {
+                            
+                                                        console.log(originalPromiseResult)})
+                                
+                                                        .catch((rejectedValueOrSerializedError)=> {
+                                                        console.log(rejectedValueOrSerializedError)
+                                                        })
+                                                }
+                                                get();
+                                                toast.success('Deleted successfully');
+                                            }
+                                        }
+                                        type='button'
+                                        className='btn btn-danger'
+                                    >
+                                        Delete
+                                    </button>
+                                </div>
+                            </li>
+                        )
+                    })
+                    : <div className='text-center'>There is no client available</div>
                 }
-            </ul>
+                </ul>
+            }
         </div>
     )
 }

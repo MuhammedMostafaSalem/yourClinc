@@ -7,10 +7,10 @@ const ClientInfo = ({selectedData}) => {
             {
                 selectedData ?
                     <div className='text-center'>
-                        <p className='fw-bold'>Your Name: {selectedData.clientName}</p>
-                        <p className='fw-bold'>Name Doctor: {selectedData.docName}</p>
-                        <p className='fw-bold'>The Appointment: {selectedData.date}</p>
-                        <p className='fw-bold'>Description: {selectedData.description}</p>
+                        <p className='fw-bold'>Your Name: {selectedData.nameClient}</p>
+                        <p className='fw-bold'>Name Doctor: {selectedData.nameDoctor}</p>
+                        <p className='fw-bold'>The Appointment Time: {selectedData.appointmentTime}</p>
+                        <p className='fw-bold'>The Appointment Day: {selectedData.appointmentDay}</p>
                     </div>
                 : <div className='alert alert-secondary' role='alert'>
                 There is no client selected yet. Please select!

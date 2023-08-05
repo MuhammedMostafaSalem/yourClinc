@@ -1,40 +1,30 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import '../../Styles/Doctor.css'
 import { Card, Col, Container, Row } from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux'
-import { getDoctors } from '../../redux/DocSlice'
+import DocContainerHook from '../../Hooks/DocHooks/DocContainerHook';
 
 const Doctor = () => {
-    const dispatch = useDispatch();
-    const [selectedData, setSelectedData] = useState(null);
-    const { docs } = useSelector(state => state.docSlice);
-    useEffect(() => {
-        setSelectedData(null)
-        dispatch(getDoctors())
-        setSelectedData(!null)
-    }, [selectedData]);
+    const [isloading, posts, deleteDoctor, dispatch, getDocId, selectedData] = DocContainerHook();
+
     return (
         <div className='doctor'>
             <Container>
                 <h3>Meet Our Speciallost</h3>
                 <Row>
-                    {
-                        docs ?
-                            docs.map((item, index) => {
-                                return (
-                                    <Col lg='4' md='6' key={index}>
-                                        <Card className='cardItem'>
-                                            <h4>{`Dr. ${item.name}`}</h4>
-                                            <p>{item.description}</p>
-                                            <p>{item.shiftDate}</p>
-                                        </Card>
-                                    </Col>
+                    <Col lg='4' md='6'>
+                        {
+                            posts.length > 0 ? posts.map((item, index) => {
+                                return(
+                                    <Card className='cardItem' key={index}>
+                                        <h4>{item.name}</h4>
+                                        <p>{item.description}</p>
+                                        <p>{`${item.startShift} : ${item.endShift}`}</p>
+                                    </Card>
                                 )
                             })
-                        : <div className='alert alert-secondary' role='alert'>
-                        There is no doctor selected yet. Please select!
-                        </div>
-                    }
+                            : <div className='text-center'>There is no doctor now</div>
+                        }
+                    </Col>
                 </Row>
             </Container>
         </div>

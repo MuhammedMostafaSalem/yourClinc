@@ -1,11 +1,11 @@
 import React from 'react'
-import AddForm from '../Components/Doc/AddForm'
-import BookContainer from '../Components/Doc/BookContainer'
+import AddDoc from '../Components/Doc/AddDoc'
+import BookContainer from '../Components/Doc/DocContainer'
 
 const DocPage = () => {
     return (
         <div>
-            <AddForm/>
+            <AddDoc/>
             <BookContainer/>
         </div>
     )

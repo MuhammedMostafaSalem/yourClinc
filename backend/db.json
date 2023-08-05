@@ -1,44 +1,34 @@
 {
   "posts": [
     {
-      "name": "muhamed",
-      "shiftDate": "10am : 10pm",
-      "description": "مساعد",
+      "name": "marwan",
+      "startShift": "10am",
+      "endShift": "10pm",
+      "description": "جراح",
       "id": 1
     },
     {
-      "name": "ahmed",
-      "shiftDate": "10pm : 10am",
-      "description": "باطنه",
-      "id": 2
-    },
-    {
-      "name": "marwan",
-      "shiftDate": "2pm : 10pm",
+      "name": "Muhammed",
+      "startShift": "12pm",
+      "endShift": "8pm",
       "description": "eye",
-      "id": 3
-    },
-    {
-      "name": "samir",
-      "shiftDate": "12pm : 8pm",
-      "description": "جراح",
-      "id": 4
+      "id": 2
     }
   ],
-  "client": [
+  "comments": [
     {
-      "clientName": "محمد",
-      "docName": "Dr. samir",
-      "date": "8pm",
-      "description": "eye",
-      "id": 2
+      "nameClient": "muhammed",
+      "nameDoctor": "marwan",
+      "appointmentTime": "4pm",
+      "appointmentDay": "2023-08-08",
+      "id": 1
     },
     {
-      "clientName": "احمد",
-      "docName": "Dr. samir",
-      "date": "8pm",
-      "description": "مساعد",
-      "id": 3
+      "nameClient": "Marwan",
+      "nameDoctor": "Muhammed",
+      "appointmentTime": "6pm",
+      "appointmentDay": "2023-08-07",
+      "id": 2
     }
   ]
 }
